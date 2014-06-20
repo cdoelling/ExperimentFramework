@@ -22,7 +22,7 @@
 	    <img class="pull-right" id="profile" src="/images/P1030088.jpg" height="40px" width="40px" />
 	</nav>
 
-      <div ng-view=""></div>
+      <div ng-view="login"></div>
     </div>
 
 
@@ -51,8 +51,11 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
+    <script src="scripts/services/login.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/browser.js"></script>
+    <script src="scripts/util.js"></script>
     <!-- endbuild -->
 </body>
 </html>

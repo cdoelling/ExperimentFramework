@@ -1,13 +1,4 @@
 'use strict';
-
-/**
- * @ngdoc overview
- * @name experimentFrameworkApp
- * @description
- * # experimentFrameworkApp
- *
- * Main module of the application.
- */
 angular
   .module('experimentFrameworkApp', [
     'ngAnimate',
@@ -20,12 +11,12 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/login.html',
+        templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })     
-      .when('/about', {
-        templateUrl: 'views/browser.html',
-        controller: 'AboutCtrl'
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
       })
       .when('/warning', {
         templateUrl: 'views/warning.html' 
