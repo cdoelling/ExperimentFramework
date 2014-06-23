@@ -1,5 +1,8 @@
 <h1>This page is experimental. We like rainbows and unicorns. Narwhals are pretty ok too. But not rats. We hate rats.</h1>
 
-<form id='entry'>
-  <input type='button' name='accept' class='button' value='Accept' />
-</form>
+<button ng-click="count = count + 1" ng-init="count=0">
+  Increment
+</button>
+count: {{count}}
+  <input type='button' name='accept' class='button' value='Accept' ng-click='accepted()' />
+

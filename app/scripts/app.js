@@ -19,7 +19,8 @@ angular
         controller: 'LoginCtrl'
       })
       .when('/warning', {
-        templateUrl: 'views/warning.html' 
+        templateUrl: 'views/warning.html',
+        controller: 'WarningCtrl'
       })
       .otherwise({
         redirectTo: '/'

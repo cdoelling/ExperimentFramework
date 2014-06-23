@@ -1,7 +1,6 @@
 'use strict';
 
 angular.module('experimentFrameworkApp')
-  .controller('MainCtrl', function ($scope,login) {
-    console.log(login);
+  .controller('MainCtrl', function ($scope) {
     $scope.awesomeThings = [];
   });
