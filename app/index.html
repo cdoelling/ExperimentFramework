@@ -16,10 +16,10 @@
   </head>
   <body ng-app="experimentFrameworkApp">
     <!-- Add your site or application content here -->
-	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation" ng-controller="UserCtrl">
 	    <img id="logo" class="pull-left" src="/images/rallyLogo_square.png" height="40px" width="40px" />
-	    <h1 class="pull-left">Rally Experiment Framework</h1>
-	    <img class="pull-right" id="profile" src="/images/P1030088.jpg" height="40px" width="40px" />
+      <h1 class="pull-left">Rally Experiment Framework</h1>
+      <img class="pull-right ng-hide" ng-hide="!user.id" id="profile" ng-src="https://rally1.rallydev.com/slm/profile/image/{{user.id}}/200.sp" height="40px" width="40px" />
 	</nav>
 
       <div ng-view="login"></div>
@@ -57,6 +57,7 @@
     <script src="scripts/services/userService.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/user.js"></script>
     <script src="scripts/controllers/browser.js"></script>
     <script src="scripts/util.js"></script>
     <!-- endbuild -->

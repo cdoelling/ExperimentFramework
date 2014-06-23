@@ -2,7 +2,9 @@
 (function(){
   var user = {
     name:'',
-    id:0
+    id:0,
+    defaultProject:null,
+    defaultWorkspace:null
   };
   angular.module('experimentFrameworkApp')
   .factory('userService', function($http) {
@@ -11,7 +13,7 @@
       getUser:function(){
         return $http({
           method:'GET',
-          url:'https://rally1.rallydev.com/slm/webservice/v2.0/user?fetch=ObjectID,DefaultProject,userprofile',
+          url:'https://rally1.rallydev.com/slm/webservice/v2.0/user?fetch=ObjectID,DefaultProject,UserProfile,DefaultWorkspace',
           headers:{
             'X-Requested-By': 'Rally',
             'X-RallyIntegrationName': 'Rally Experiment Framework'
@@ -22,6 +24,8 @@
         .success(function(data){
           user.name = data.User._refObjectName;
           user.id = data.User.ObjectID;
+          user.defaultProject = data.User.UserProfile.DefaultProject;
+          user.defaultWorkspace = data.User.UserProfile.DefaultWorkspace;
         });
       }
     };
