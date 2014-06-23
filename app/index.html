@@ -5,24 +5,18 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css styles/vendor.css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/style.css">
-    <!-- endbuild -->
   </head>
   <body ng-app="experimentFrameworkApp">
-    <!-- Add your site or application content here -->
 	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation" ng-controller="UserCtrl">
 	    <img id="logo" class="pull-left" src="/images/rallyLogo_square.png" height="40px" width="40px" />
       <h1 class="pull-left">Rally Experiment Framework</h1>
-      <img class="pull-right ng-hide" ng-hide="!user.id" id="profile" ng-src="https://rally1.rallydev.com/slm/profile/image/{{user.id}}/200.sp" height="40px" width="40px" />
+      <img class="pull-right ng-hide" ng-hide="!user.id" id="profile" 
+        ng-src="https://rally1.rallydev.com/slm/profile/image/{{user.id}}/200.sp" height="40px" width="40px" />
 	</nav>
-
-      <div ng-view="login"></div>
+    <div ng-view="login"></div>
     </div>
 
 
