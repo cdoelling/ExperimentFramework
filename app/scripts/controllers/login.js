@@ -1,10 +1,8 @@
 'use strict';
 
 angular.module('experimentFrameworkApp')
-.controller('LoginCtrl', function ($scope,login) {
-  console.log('gfd');
+.controller('LoginCtrl', function ($scope,userService) {
   $scope.submit = function() {
-    console.log('sd',login);
+    userService.login($scope.username,$scope.password);
   };
-  $scope.awesomeThings = 'Tacos';
 });

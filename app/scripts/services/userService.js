@@ -1,10 +1,14 @@
 'use strict';
+var Login;
 angular.module('experimentFrameworkApp')
-.factory('login', function() {
-  return function(){};
+.factory('userService', function($http) {
+  console.log($http);
+  return { 
+    login: Login,
+    user:{}
+  };
 });
 var $ = $||undefined;
-var Login;
 (function() {
   Login = function(id,pw) {
     $.ajax({
