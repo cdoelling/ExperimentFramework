@@ -2,7 +2,7 @@
 (function(){
   var user = {
     name:'',
-    id:0,
+    id:window.sessionStorage.userId||0,
     defaultProject:null,
     defaultWorkspace:null
   };
@@ -24,6 +24,7 @@
         .success(function(data){
           user.name = data.User._refObjectName;
           user.id = data.User.ObjectID;
+          window.sessionStorage.userId = user.id;
           user.defaultProject = data.User.UserProfile.DefaultProject;
           user.defaultWorkspace = data.User.UserProfile.DefaultWorkspace;
         });

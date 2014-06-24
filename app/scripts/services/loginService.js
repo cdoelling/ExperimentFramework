@@ -16,7 +16,7 @@ angular.module('experimentFrameworkApp')
     })
     .success(function(data){
       var token = data.OperationResult.SecurityToken;
-      window.sessionStorage.setItem('securityToken', token ? token : '');
+      window.sessionStorage.securityToken = token;
     });
   }
   return login;

@@ -9,7 +9,6 @@ angular.module('experimentFrameworkApp')
   }
   $scope.accepted =  function(){
     window.sessionStorage.acceptedWarning = true;
-    debugger;
     $location.url('/login');
   };
 
