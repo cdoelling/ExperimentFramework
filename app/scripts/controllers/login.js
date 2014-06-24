@@ -10,6 +10,5 @@ angular.module('experimentFrameworkApp')
         $location.url('/');
       });
     });
-
   };
 });
