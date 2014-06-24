@@ -1,7 +1,13 @@
 'use strict';
 (function(){
+function isChrome() {
+  return window.chrome && window.navigator.vendor === 'Google Inc.';
+}
 var routeWrangler = function(pathArgs,currentPath){
   //angular won't let me inject a service here cause it is a jerk. 
+  if(!isChrome()){
+    return '/browser';
+  }
   if(!window.sessionStorage.acceptedWarning){
     return '/warning';
   }
@@ -32,6 +38,11 @@ angular
     })
     .when('/', {
       templateUrl: 'views/main.html',
+      controller: 'MainCtrl',
+      redirectTo: routeWrangler
+    })         
+    .when('/browser', {
+      templateUrl: 'views/browser.html',
       controller: 'MainCtrl',
       redirectTo: routeWrangler
     })     
