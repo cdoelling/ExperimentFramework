@@ -1,1 +1,78 @@
-Main
+<h1><span class="picto icon-test"></span> Lab Report</h1>
+  
+<form>
+<div class="form-group">
+  <label for="title">Experiment Title</label>
+  <input type="text" id="title" ng-blur="blur('title')" ng-model="title">
+</div>
+
+<div class="form-group">
+  <label for="outcome">Desired Outcome</label>
+  <p>What you are trying to accomplish, change or learn?</p>
+  <textarea id="outcome" ng-blur="blur('outcome')" ng-model="outcome"></textarea>
+</div>
+    
+<div class="form-group">
+  <label for="hypothesis">Hypothesis</label>
+  <p>What do you want to try?</p>
+  <textarea id="hypothesis" ng-blur="blur('hypothesis')" ng-model="hypothesis"></textarea>
+</div>
+
+<div class="form-group">
+  <label for="resources">Resources Needed</label>
+  <p>What type of support, equipment, people and buy in is needed to properly learn from the experiment?</p>
+  <textarea id="resources" ng-blur="blur('resources')" ng-model="resources"></textarea>
+</div>
+
+<div class="form-group">
+  <label for="procedure">Procedure</label>
+  <p>What process are you going to adopt, change or alter?</p>
+  <textarea id="procedure" ng-blur="blur('procedure')" ng-model="procedure"></textarea>
+</div>
+
+<div class="form-group">
+  <label for="data">Data to be Collected</label>
+  <p>How will you know the effects that your change created? Can you adopt a control group to help you be sure?</p>
+  <textarea id="data"  ng-blur="blur('data')" ng-model="data"></textarea>
+</div>
+
+<div class="form-group">
+  <label for="current_state">Current State</label>
+  <p>What is the current state of the data you are collecting?</p>
+  <textarea id="current_state" ng-blur="blur('currentState')" ng-model="currentState"></textarea>
+  <input type="file" id="current_state_file">
+</div>
+      
+<p class="bg-info"><span class="picto icon-test"></span> After socializing the idea of the experiment and 
+the changes that you are trying to create in your organization, you are ready to see how it goes...</p>
+
+<p class="bg-info"><span class="picto icon-test"></span> After you complete your experiment, fill out the second part of the report.</p>
+
+<hr>
+    
+<div class="form-group">
+<label for="post_state">Post Experiment State</label>
+<p>What is the new state of the data you are collected?</p>
+<textarea id="post_state" ng-blur="blur('postState')" ng-model="postState">></textarea>
+<input type="file" id="post_state_file">
+</div>
+  
+<div class="form-group">
+<label for="effectiveness">Evaluate Effectiveness of Change</label>
+<p>Did your experiment create the desired effect?</p>
+<textarea id="effectiveness" ng-blur="blur('effectiveness')" ng-model="effectiveness">></textarea>
+</div>
+
+<div class="form-group">
+<label for="outliers">Outliers</label>
+<p>Did any unexpected forces change the outcome of your experiment?</p>
+<textarea id="outliers" ng-blur="blur('outliers')" ng-model="outliers"></textarea>
+</div>
+
+<div class="form-group">
+<label for="analysis">Analysis and Recommended Next Experiment</label>
+<p>What’s next to continue your progress?</p>
+<textarea id="analysis" ng-blur="blur('analysis')" ng-model="analysis">></textarea>
+</div>
+  
+</form>
