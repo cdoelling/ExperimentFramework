@@ -1,9 +1,8 @@
 'use strict';
 
 angular.module('experimentFrameworkApp')
-.controller('MainCtrl', function ($scope) {
+.controller('ExperimentCtrl', function ($scope) {
   $scope.blur = function(field){
-    console.log(field);
     console.log($scope[field]);
   };
 });

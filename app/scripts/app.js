@@ -50,6 +50,16 @@ angular
       templateUrl: 'views/warning.html',
       controller: 'WarningCtrl',
       redirectTo: routeWrangler
+    })    
+    .when('/experiment/new', {
+      templateUrl: 'views/main.html',
+      controller: 'NewExperimentCtrl',
+      redirectTo: routeWrangler
+    })    
+    .when('/experiment/:id', {
+      templateUrl: 'views/main.html',
+      controller: 'ExperimentCtrl',
+      redirectTo: routeWrangler
     })
     .otherwise({
       redirectTo: '/'
