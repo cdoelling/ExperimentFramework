@@ -1,0 +1,8 @@
+<script>
+var parts = window.location.href.split("/");
+debugger;
+var end = parts.pop();
+parts.push("app");
+parts.push(end);
+window.location.href = parts.join("/");
+</script>
