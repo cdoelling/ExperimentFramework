@@ -2,7 +2,7 @@
 (function(){
   var user = {
     name:'',
-    id:window.sessionStorage.userId||0,
+    id:0,
     defaultProject:null,
     defaultWorkspace:null
   };

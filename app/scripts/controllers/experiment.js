@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('experimentFrameworkApp')
-.controller('ExperimentCtrl', function ($scope) {
+.controller('ExperimentCtrl', function ($scope,$routeParams,preferenceService) {
   $scope.blur = function(field){
-    console.log($scope[field]);
+    preferenceService.saveExperimentPart($routeParams.id,field,$scope[field]);
   };
 });

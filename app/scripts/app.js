@@ -36,11 +36,6 @@ angular
       controller: 'LoginCtrl',
       redirectTo: routeWrangler
     })
-    .when('/', {
-      templateUrl: 'views/main.html',
-      controller: 'MainCtrl',
-      redirectTo: routeWrangler
-    })         
     .when('/browser', {
       templateUrl: 'views/browser.html',
       controller: 'MainCtrl',
@@ -62,7 +57,7 @@ angular
       redirectTo: routeWrangler
     })
     .otherwise({
-      redirectTo: '/'
+      redirectTo: '/experiment/new'
     });
   });
 })();
