@@ -46,6 +46,11 @@ angular
       controller: 'WarningCtrl',
       redirectTo: routeWrangler
     })    
+    .when('/experiment/list', {
+      templateUrl: 'views/listExperiments.html',
+      controller: 'ListExperimentsCtrl',
+      redirectTo: routeWrangler
+    }) 
     .when('/experiment/new', {
       templateUrl: 'views/main.html',
       controller: 'NewExperimentCtrl',
@@ -57,7 +62,7 @@ angular
       redirectTo: routeWrangler
     })
     .otherwise({
-      redirectTo: '/experiment/new'
+      redirectTo: '/experiment/list'
     });
   });
 })();

@@ -5,18 +5,25 @@
     'X-RallyIntegrationName': 'Rally Experiment Framework'
   };
   angular.module('experimentFrameworkApp')
-  .factory('preferenceService', function($http,userService) {
+  .factory('preferenceService', function($http,userService,$q) {
     var service = {
       getExperiments:function(){
-        return $http({
+        var deferred = $q.defer();
+        $http({
           method:'GET',
-          url: 'https://rally1.rallydev.com/slm/webservice/v2.0/preference?fetch=true&query=(Name contains "Experiment")',
+          url: 'https://rally1.rallydev.com/slm/webservice/v2.0/preference?pretty=true&fetch=true&query=(Name contains "Experiment")',
           headers:headers,
           withCredentials:true,
           responseType:'json'
         })
-        .success(function(){
+        .success(function(data){
+          var d = data.QueryResult.Results;
+          deferred.resolve(d);
+        })
+        .catch(function(err){
+          deferred.reject(err);
         });
+        return deferred.promise;
       },
       saveExperimentPart:function(experimentId,name,data){
         var key = 'experiment-' + name + ' '+experimentId;
