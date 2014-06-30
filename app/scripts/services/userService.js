@@ -1,11 +1,6 @@
 'use strict';
 (function(){
-  var user = {
-    name:'',
-    id:0,
-    defaultProject:null,
-    defaultWorkspace:null
-  };
+  var user = window.sessionStorage.user? JSON.parse(window.sessionStorage.user):{};
   angular.module('experimentFrameworkApp')
   .factory('userService', function($http) {
     var service = {
@@ -24,9 +19,9 @@
         .success(function(data){
           user.name = data.User._refObjectName;
           user.id = data.User.ObjectID;
-          window.sessionStorage.userId = user.id;
           user.defaultProject = data.User.UserProfile.DefaultProject;
           user.defaultWorkspace = data.User.UserProfile.DefaultWorkspace;
+          window.sessionStorage.user = JSON.stringify(user);
         });
       }
     };
