@@ -1,4 +1,4 @@
 <h1>List of your experiments</h1>
-<div ng-repeat="thing in things" >
-  {{thing.Value}}
+<div ng-repeat="experiment in experiments" >
+  <a href="#/experiment/{{experiment._id}}" >{{experiment.Value}} </a>
 </div>
