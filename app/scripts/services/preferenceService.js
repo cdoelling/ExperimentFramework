@@ -64,7 +64,9 @@
           responseType:'json'
         })
         .success(function(data){
-          var errors = data.CreateResult.Errors;
+          var result;
+          for(result in data){}
+          var errors = data[result].Errors;
           if(errors.length){
             throw new Error(errors[0]);
           }
