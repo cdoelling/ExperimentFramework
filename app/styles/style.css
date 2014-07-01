@@ -10,7 +10,7 @@ body {
 }
 .navbar {
 	min-height: 40px;
-	height: 40px; !important
+	height: 40px; 
 }
 .navbar h1 {
 	color: #fff;
@@ -113,4 +113,8 @@ hr {
 	max-width: 400px;
 	margin: 0 auto;
 	overflow: hidden;
+}
+#info {
+  color:#e6e6e6;
+  padding-left:40px;
 }

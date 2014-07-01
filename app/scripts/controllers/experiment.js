@@ -1,9 +1,14 @@
 'use strict';
 angular.module('experimentFrameworkApp')
-.controller('ExperimentCtrl', function ($scope,$routeParams,preferenceService) {
+.controller('ExperimentCtrl', function ($scope,$routeParams,preferenceService,$rootScope) {
   $scope.blur = function(field){
     var objectId = $scope.ids[field];
-    preferenceService.saveExperimentPart($routeParams.id,field,$scope[field],objectId);
+    $rootScope.$broadcast('update-info', "Saving");
+    preferenceService.saveExperimentPart($routeParams.id,field,$scope[field],objectId)
+    .then(function(){
+      $rootScope.$broadcast('update-info', "Saved Successfully");
+    });
+
   };
   preferenceService.getExperimentById($routeParams.id)
   .then(function(experimentParts){
@@ -12,7 +17,6 @@ angular.module('experimentFrameworkApp')
       var field = part.Name.split(' ')[0].split('-')[1];
       $scope[field] = part.Value;
       $scope.ids[field] = part.ObjectID;
-
     });
   });
 });

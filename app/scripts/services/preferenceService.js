@@ -24,13 +24,12 @@
           deferred.reject(err);
         });
         return deferred.promise;
-
       },
       getExperiments:function(){
         var deferred = $q.defer();
         $http({
           method:'GET',
-          url: 'https://rally1.rallydev.com/slm/webservice/v2.0/preference?pretty=true&fetch=true&query=(Name contains "Experiment")',
+          url: 'https://rally1.rallydev.com/slm/webservice/v2.0/preference?pretty=true&fetch=true&query=(Name contains "experiment-title")',
           headers:headers,
           withCredentials:true,
           responseType:'json'

@@ -13,6 +13,7 @@
 	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation" ng-controller="UserCtrl">
 	    <img id="logo" class="pull-left" src=".//images/rallyLogo_square.png" height="40px" width="40px" />
       <h1 class="pull-left">Rally Experiment Framework</h1>
+      <h1  ng-controller="InfoCtrl" ng-hide="!info"  class="pull-left" id="info" >{{info}}</h1>
       <img class="pull-right ng-hide" ng-hide="!user.id" id="profile" 
         ng-src="https://rally1.rallydev.com/slm/profile/image/{{user.id}}/200.sp" height="40px" width="40px" />
 	</nav>
@@ -56,6 +57,7 @@
     <script src="scripts/controllers/login.js"></script>
     <script src="scripts/controllers/warning.js"></script>
     <script src="scripts/controllers/user.js"></script>
+    <script src="scripts/controllers/info.js"></script>
     <script src="scripts/controllers/newExperiment.js"></script>
     <script src="scripts/controllers/experiment.js"></script>
     <script src="scripts/controllers/listExperiments.js"></script>
