@@ -7,6 +7,25 @@
   angular.module('experimentFrameworkApp')
   .factory('preferenceService', function($http,userService,$q) {
     var service = {
+      getExperimentById:function(id){
+        var deferred = $q.defer();
+        $http({
+          method:'GET',
+          url: 'https://rally1.rallydev.com/slm/webservice/v2.0/preference?pretty=true&fetch=true&query=(Name contains "'+id+'")',
+          headers:headers,
+          withCredentials:true,
+          responseType:'json'
+        })
+        .success(function(data){
+          var d = data.QueryResult.Results;
+          deferred.resolve(d);
+        })
+        .catch(function(err){
+          deferred.reject(err);
+        });
+        return deferred.promise;
+
+      },
       getExperiments:function(){
         var deferred = $q.defer();
         $http({
@@ -25,8 +44,9 @@
         });
         return deferred.promise;
       },
-      saveExperimentPart:function(experimentId,name,data){
+      saveExperimentPart:function(experimentId,name,data,objectId){
         var key = 'experiment-' + name + ' '+experimentId;
+        var endpoint = objectId ? objectId : 'create';
         return $http({
           method:'POST',
           data:{
@@ -36,7 +56,7 @@
               Value:data
             }
           },
-          url: 'https://rally1.rallydev.com/slm/webservice/v2.0/preference/create',
+          url: 'https://rally1.rallydev.com/slm/webservice/v2.0/preference/' + endpoint,
           params:{
             key:window.sessionStorage.securityToken
           },
