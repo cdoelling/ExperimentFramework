@@ -1,7 +1,16 @@
 'use strict';
 angular.module('experimentFrameworkApp')
-.controller('InfoCtrl', function ($scope) {
-  $scope.$on('update-info',function(e,info){
-    $scope.info = info; 
+.controller('InfoCtrl', function ($scope,$timeout) {
+  $scope.$on('update-info',function(e,data){
+    $scope.info = data.info;
+    if($scope.timeoutHandle) 
+    {
+      $timeout.cancel($scope.timeoutHandle);
+    }
+    if(data.duration){
+      $scope.timeoutHandle = $timeout(function(){
+        $scope.info = '';
+      },data.duration);
+    }
   });
 });

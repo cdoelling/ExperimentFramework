@@ -3,10 +3,13 @@ angular.module('experimentFrameworkApp')
 .controller('ExperimentCtrl', function ($scope,$routeParams,preferenceService,$rootScope) {
   $scope.blur = function(field){
     var objectId = $scope.ids[field];
-    $rootScope.$broadcast('update-info', "Saving");
+    $rootScope.$broadcast('update-info', {info:'Saving'});
     preferenceService.saveExperimentPart($routeParams.id,field,$scope[field],objectId)
     .then(function(){
-      $rootScope.$broadcast('update-info', "Saved Successfully");
+      $rootScope.$broadcast('update-info', {
+        info:'Saved Successfully',
+        duration:2000
+      });
     });
 
   };
