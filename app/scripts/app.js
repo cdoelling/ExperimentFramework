@@ -52,12 +52,12 @@ angular
       redirectTo: routeWrangler
     }) 
     .when('/experiment/new', {
-      templateUrl: 'views/main.html',
+      templateUrl: 'views/experiment.html',
       controller: 'NewExperimentCtrl',
       redirectTo: routeWrangler
     })    
     .when('/experiment/:id', {
-      templateUrl: 'views/main.html',
+      templateUrl: 'views/experiment.html',
       controller: 'ExperimentCtrl',
       redirectTo: routeWrangler
     })
