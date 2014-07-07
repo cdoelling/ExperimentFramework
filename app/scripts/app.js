@@ -61,6 +61,10 @@ angular
       controller: 'ExperimentCtrl',
       redirectTo: routeWrangler
     })
+    .when('/demo/:id', {
+      templateUrl: 'views/experiment.html',
+      controller: 'DemoExperimentCtrl'
+    })
     .otherwise({
       redirectTo: '/experiment/list'
     });

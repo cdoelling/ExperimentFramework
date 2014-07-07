@@ -42,6 +42,10 @@
   <textarea id="current_state" ng-blur="blur('currentState')" ng-model="currentState"></textarea>
   <input type="file" id="current_state_file">
 </div>
+
+<div ng-repeat="image in beforeImages" >
+  <img class="status-image" ng-src="{{image}}"></img>
+</div>
       
 <p class="bg-info"><span class="picto icon-test"></span> After socializing the idea of the experiment and 
 the changes that you are trying to create in your organization, you are ready to see how it goes...</p>
@@ -49,14 +53,15 @@ the changes that you are trying to create in your organization, you are ready to
 <p class="bg-info"><span class="picto icon-test"></span> After you complete your experiment, fill out the second part of the report.</p>
 
 <hr>
-    
 <div class="form-group">
 <label for="post_state">Post Experiment State</label>
 <p>What is the new state of the data you are collected?</p>
 <textarea id="post_state" ng-blur="blur('postState')" ng-model="postState">></textarea>
 <input type="file" id="post_state_file">
 </div>
-  
+<div ng-repeat="image in afterImages" >
+  <img class="status-image" ng-src="{{image}}"></img>
+</div>
 <div class="form-group">
 <label for="effectiveness">Evaluate Effectiveness of Change</label>
 <p>Did your experiment create the desired effect?</p>
@@ -74,5 +79,4 @@ the changes that you are trying to create in your organization, you are ready to
 <p>What’s next to continue your progress?</p>
 <textarea id="analysis" ng-blur="blur('analysis')" ng-model="analysis">></textarea>
 </div>
-  
 </form>
