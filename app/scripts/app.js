@@ -48,8 +48,7 @@ angular
     })    
     .when('/experiment/list', {
       templateUrl: 'views/listExperiments.html',
-      controller: 'ListExperimentsCtrl',
-      redirectTo: routeWrangler
+      controller: 'ListExperimentsCtrl'
     }) 
     .when('/experiment/new', {
       templateUrl: 'views/experiment.html',
