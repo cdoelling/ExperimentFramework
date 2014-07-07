@@ -1,4 +1,11 @@
 <h1>List of your experiments</h1>
+<h2>Experiments Shared with your Workspace</h2>
 <div ng-repeat="experiment in experiments" >
   <a href="#/experiment/{{experiment._id}}" >{{experiment.Value}} </a>
+</div>
+
+
+<h2>Demo Experiments</h2>
+<div ng-repeat="experiment in demoExperiments" >
+  <a href="#/demo/{{experiment._id}}" >{{experiment.title}} </a>
 </div>

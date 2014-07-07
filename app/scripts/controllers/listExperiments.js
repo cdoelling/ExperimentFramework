@@ -9,4 +9,8 @@ angular.module('experimentFrameworkApp')
     });
     $scope.experiments = experiments;
   });
+  $scope.demoExperiments = [{
+    _id:9,
+    title:'Remove Testing Hardware Bottleneck'
+  }];
 });
