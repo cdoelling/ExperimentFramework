@@ -114,9 +114,12 @@ hr {
 	margin: 0 auto;
 	overflow: hidden;
 }
-#info {
+.info {
   color:#e6e6e6;
   padding-left:40px;
+}
+.info.error-text{
+  color:#EE1C25;
 }
 #logout {
   padding-right:10px;
@@ -124,3 +127,5 @@ hr {
 .status-image{
   width:100%;
 }
+
+
