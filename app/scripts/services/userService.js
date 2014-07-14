@@ -2,7 +2,7 @@
 (function(){
   var user = window.sessionStorage.user? JSON.parse(window.sessionStorage.user):{};
   angular.module('experimentFrameworkApp')
-  .factory('userService', function($http) {
+  .factory('userService', function($http,apiKeyService) {
     var service = {
       user:user,
       getUser:function(){
@@ -11,7 +11,8 @@
           url:'https://rally1.rallydev.com/slm/webservice/v2.0/user?fetch=ObjectID,DefaultProject,UserProfile,DefaultWorkspace',
           headers:{
             'X-Requested-By': 'Rally',
-            'X-RallyIntegrationName': 'Rally Experiment Framework'
+            'X-RallyIntegrationName': 'Rally Experiment Framework',
+            zsessionid:apiKeyService.getApiKey()
           },
           withCredentials:true,
           responseType:'json'

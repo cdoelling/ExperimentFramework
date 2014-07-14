@@ -1,11 +1,13 @@
 'use strict';
 (function(){
-  var headers={
-    'X-Requested-By': 'Rally',
-    'X-RallyIntegrationName': 'Rally Experiment Framework'
-  };
+
   angular.module('experimentFrameworkApp')
-  .factory('preferenceService', function($http,userService,$q) {
+  .factory('preferenceService', function($http,userService,apiKeyService,$q) {  
+    var headers={
+      'X-Requested-By': 'Rally',
+      'X-RallyIntegrationName': 'Rally Experiment Framework',
+      zsessionid:apiKeyService.getApiKey()
+    };
     var service = {
       getExperimentById:function(id){
         var deferred = $q.defer();
@@ -56,9 +58,6 @@
             }
           },
           url: 'https://rally1.rallydev.com/slm/webservice/v2.0/preference/' + endpoint,
-          params:{
-            key:window.sessionStorage.securityToken
-          },
           headers:headers,
           withCredentials:true,
           responseType:'json'

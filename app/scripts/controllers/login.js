@@ -1,14 +1,12 @@
 'use strict';
 
 angular.module('experimentFrameworkApp')
-.controller('LoginCtrl', function ($scope,loginService,userService,$location) {
+.controller('LoginCtrl', function ($scope,apiKeyService,userService,$location) {
   $scope.submit = function() {
-    loginService($scope.username,$scope.password)
+    apiKeyService.store($scope.apiKey);
+    userService.getUser()
     .then(function(){
-      userService.getUser()
-      .then(function(){
-        $location.url('/');
-      });
+      $location.url('/');
     });
   };
 });

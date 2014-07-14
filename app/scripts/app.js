@@ -11,7 +11,7 @@ var routeWrangler = function(pathArgs,currentPath){
   if(!window.sessionStorage.acceptedWarning){
     return '/warning';
   }
-  if(!(window.sessionStorage.securityToken&&window.sessionStorage.user)){
+  if(!window.sessionStorage.apiKey){
     return '/login';
   }
   if(currentPath.match(/\/login/) || currentPath.match(/\/warning/))
