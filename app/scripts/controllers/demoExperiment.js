@@ -18,6 +18,7 @@ angular.module('experimentFrameworkApp')
   $scope.beforeImages = [];
   $scope.afterImages = ['./images/TestingAfter.png'];
 
+  $scope.readonly = true;
   for(var i in data){
     $scope[i] = data[i];
   }

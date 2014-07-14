@@ -3,43 +3,43 @@
 <form>
 <div class="form-group">
   <label for="title">Experiment Title</label>
-  <input type="text" id="title" ng-blur="blur('title')" ng-model="title">
+  <input ng-readonly="readonly" type="text" id="title" ng-blur="blur('title')" ng-model="title">
 </div>
 
 <div class="form-group">
   <label for="outcome">Desired Outcome</label>
   <p>What you are trying to accomplish, change or learn?</p>
-  <textarea id="outcome" ng-blur="blur('outcome')" ng-model="outcome"></textarea>
+  <textarea id="outcome" ng-blur="blur('outcome')" ng-model="outcome" ng-readonly="readonly" ></textarea>
 </div>
     
 <div class="form-group">
   <label for="hypothesis">Hypothesis</label>
   <p>What do you want to try?</p>
-  <textarea id="hypothesis" ng-blur="blur('hypothesis')" ng-model="hypothesis"></textarea>
+  <textarea id="hypothesis" ng-blur="blur('hypothesis')" ng-model="hypothesis" ng-readonly="readonly"></textarea>
 </div>
 
 <div class="form-group">
   <label for="resources">Resources Needed</label>
   <p>What type of support, equipment, people and buy in is needed to properly learn from the experiment?</p>
-  <textarea id="resources" ng-blur="blur('resources')" ng-model="resources"></textarea>
+  <textarea id="resources" ng-blur="blur('resources')" ng-model="resources" ng-readonly="readonly"></textarea>
 </div>
 
 <div class="form-group">
   <label for="procedure">Procedure</label>
   <p>What process are you going to adopt, change or alter?</p>
-  <textarea id="procedure" ng-blur="blur('procedure')" ng-model="procedure"></textarea>
+  <textarea id="procedure" ng-blur="blur('procedure')" ng-model="procedure" ng-readonly="readonly"></textarea>
 </div>
 
 <div class="form-group">
   <label for="data">Data to be Collected</label>
   <p>How will you know the effects that your change created? Can you adopt a control group to help you be sure?</p>
-  <textarea id="data"  ng-blur="blur('data')" ng-model="data"></textarea>
+  <textarea id="data"  ng-blur="blur('data')" ng-model="data" ng-readonly="readonly"></textarea>
 </div>
 
 <div class="form-group">
   <label for="current_state">Current State</label>
   <p>What is the current state of the data you are collecting?</p>
-  <textarea id="current_state" ng-blur="blur('currentState')" ng-model="currentState"></textarea>
+  <textarea id="current_state" ng-blur="blur('currentState')" ng-model="currentState" ng-readonly="readonly"></textarea>
   <input type="file" id="current_state_file">
 </div>
 
@@ -56,7 +56,7 @@ the changes that you are trying to create in your organization, you are ready to
 <div class="form-group">
 <label for="post_state">Post Experiment State</label>
 <p>What is the new state of the data you are collected?</p>
-<textarea id="post_state" ng-blur="blur('postState')" ng-model="postState">></textarea>
+<textarea id="post_state" ng-blur="blur('postState')" ng-model="postState" ng-readonly="readonly">></textarea>
 <input type="file" id="post_state_file">
 </div>
 <div ng-repeat="image in afterImages" >
@@ -65,18 +65,18 @@ the changes that you are trying to create in your organization, you are ready to
 <div class="form-group">
 <label for="effectiveness">Evaluate Effectiveness of Change</label>
 <p>Did your experiment create the desired effect?</p>
-<textarea id="effectiveness" ng-blur="blur('effectiveness')" ng-model="effectiveness">></textarea>
+<textarea id="effectiveness" ng-blur="blur('effectiveness')" ng-model="effectiveness" ng-readonly="readonly">></textarea>
 </div>
 
 <div class="form-group">
 <label for="outliers">Outliers</label>
 <p>Did any unexpected forces change the outcome of your experiment?</p>
-<textarea id="outliers" ng-blur="blur('outliers')" ng-model="outliers"></textarea>
+<textarea id="outliers" ng-blur="blur('outliers')" ng-model="outliers" ng-readonly="readonly"></textarea>
 </div>
 
 <div class="form-group">
 <label for="analysis">Analysis and Recommended Next Experiment</label>
 <p>What’s next to continue your progress?</p>
-<textarea id="analysis" ng-blur="blur('analysis')" ng-model="analysis">></textarea>
+<textarea id="analysis" ng-blur="blur('analysis')" ng-model="analysis" ng-readonly="readonly">></textarea>
 </div>
 </form>
