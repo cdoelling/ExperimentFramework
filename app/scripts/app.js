@@ -64,6 +64,10 @@ angular
     .when('/demo/:id', {
       templateUrl: 'views/experiment.html',
       controller: 'DemoExperimentCtrl'
+    })    
+    .when('/logout', {
+      templateUrl: 'views/logout.html',
+      controller: 'LogoutCtrl'
     })
     .otherwise({
       redirectTo: '/experiment/list'

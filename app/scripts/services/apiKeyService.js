@@ -7,6 +7,9 @@ angular.module('experimentFrameworkApp')
     },
     getApiKey:function(){
       return window.sessionStorage.apiKey;
+    },
+    clear:function(){
+      delete window.sessionStorage.apiKey;
     }
   };
 });

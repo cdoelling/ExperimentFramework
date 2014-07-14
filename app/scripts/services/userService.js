@@ -2,9 +2,14 @@
 (function(){
   var user = window.sessionStorage.user? JSON.parse(window.sessionStorage.user):{};
   angular.module('experimentFrameworkApp')
-  .factory('userService', function($http,apiKeyService) {
+  .factory('userService', function($http,$rootScope,apiKeyService) {
     var service = {
       user:user,
+      clearUser:function(){
+        user = {};
+        delete window.sessionStorage.user;
+        $rootScope.$broadcast('update-user',user);
+      },
       getUser:function(){
         return $http({
           method:'GET',
