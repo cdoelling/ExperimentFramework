@@ -11,7 +11,6 @@ angular.module('experimentFrameworkApp')
         duration:2000
       });
     });
-
   };
   preferenceService.getExperimentById($routeParams.id)
   .then(function(experimentParts){

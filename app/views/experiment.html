@@ -2,13 +2,19 @@
   
 <form>
 <div class="form-group">
-  <label for="title">Experiment Title</label>
+  <label for="title">Experiment Title </label>
   <input ng-readonly="readonly" type="text" id="title" ng-blur="blur('title')" ng-model="title">
 </div>
 
 <div class="form-group">
   <label for="outcome">Desired Outcome</label>
+  <span ng-click="showOutcome=!showOutcome" ng-hide="showOutcome" class="additional-information">learn more </span>
+  <span ng-click="showOutcome=!showOutcome" ng-show="showOutcome" class="additional-information">learn less </span>
   <p>What you are trying to accomplish, change or learn?</p>
+  <div ng-show="showOutcome">
+    What is the desired business outcome from your experiment. Make sure to explain this in economic terms that the business understands.<div> Example: We will increase feature throughput. At out current run rate a feature takes 2 weeks to complete. It costs our development organization approximatly $30,000 for each of these features. A 10% increase will add up to $100,000 a year worth of additional velocity from this team alone. </div>
+  </div>
+
   <textarea id="outcome" ng-blur="blur('outcome')" ng-model="outcome" ng-readonly="readonly" ></textarea>
 </div>
     
