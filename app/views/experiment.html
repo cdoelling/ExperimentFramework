@@ -8,11 +8,14 @@
 
 <div class="form-group">
   <label for="outcome">Desired Outcome</label>
-  <span ng-click="showOutcome=!showOutcome" ng-hide="showOutcome" class="additional-information">learn more </span>
-  <span ng-click="showOutcome=!showOutcome" ng-show="showOutcome" class="additional-information">learn less </span>
+  <span ng-click="showOutcome=!showOutcome" ng-hide="showOutcome" class="toggle-info">learn more </span>
+  <span ng-click="showOutcome=!showOutcome" ng-show="showOutcome" class="toggle-info">learn less </span>
   <p>What you are trying to accomplish, change or learn?</p>
-  <div ng-show="showOutcome">
-    What is the desired business outcome from your experiment. Make sure to explain this in economic terms that the business understands.<div> Example: We will increase feature throughput. At out current run rate a feature takes 2 weeks to complete. It costs our development organization approximatly $30,000 for each of these features. A 10% increase will add up to $100,000 a year worth of additional velocity from this team alone. </div>
+  <div class="additional-info" ng-show="showOutcome">
+    What is the desired business outcome from your experiment. Make sure to explain this in economic terms that the business understands.
+    <div class="example"> 
+      Example: We will increase feature throughput. At out current run rate a feature takes 2 weeks to complete. It costs our development organization approximatly $30,000 for each of these features. A 10% increase will add up to $100,000 a year worth of additional velocity from this team alone. 
+    </div>
   </div>
 
   <textarea id="outcome" ng-blur="blur('outcome')" ng-model="outcome" ng-readonly="readonly" ></textarea>
@@ -20,7 +23,15 @@
     
 <div class="form-group">
   <label for="hypothesis">Hypothesis</label>
-  <p>What do you want to try?</p>
+  <span ng-click="showHypothesis=!showHypothesis" ng-hide="showHypothesis" class="additional-information">learn more </span>
+  <span ng-click="showHypothesis=!showHypothesis" ng-show="showHypothesis" class="additional-information">learn less </span>
+  <p>What do you want to try?</p>  
+  <div class="additional-info" ng-show="showHypothesis">
+      Your hypothesis is a combination of the change you want to make and the desired results from that change. If you hypothesis is successful you will be able to show data that you have made an improvement in the direction of your desired outcome. 
+    <div class="example">
+      I think the simplifaction of our build system will improve the througput of our team. A brief interview of my fellow engineers showed that waiting for the resolution of broken builds slowed them down multiple times a day. We think that spending one week improving our build process will increase our team's throughput by over 10%. 
+    </div>
+  </div>
   <textarea id="hypothesis" ng-blur="blur('hypothesis')" ng-model="hypothesis" ng-readonly="readonly"></textarea>
 </div>
 
