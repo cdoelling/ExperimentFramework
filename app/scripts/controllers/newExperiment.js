@@ -2,5 +2,7 @@
 
 angular.module('experimentFrameworkApp')
 .controller('NewExperimentCtrl', function ($location,guidService) {
-  $location.url('/experiment/'+guidService());
+  var guid = guidService();
+  window.location.replace('#/experiment/'+ guid);
+  $location.url('/experiment/'+guid);
 });
