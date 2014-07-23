@@ -1,12 +1,33 @@
-<h1>Experiments</h1>
+<div class="cotainer-fluid">
+  <div class="margin-top-negative jumbotron">
+    <h1 class="text-left">Rally Lab Report</h1>
+    <p class="text-left">This is where we say nice things about our users and value the work they do.</p> 
+    <p class="text-left">Then we talk about how this tool will help them communicate their goals and work consistantly across a company.</p>
+  </div> <!-- /.jumbotron -->
 
-<h2>Demo Experiments</h2>
-<div ng-repeat="experiment in demoExperiments" >
-  <a href="#/demo/{{experiment._id}}" >{{experiment.title}} </a>
-</div>
-
-<h2  ng-show="experiments.length" >Experiments Shared with your Workspace</h2>
-<div ng-show="experiments.length" ng-repeat="experiment in experiments" >
-  <a href="#/experiment/{{experiment._id}}" >{{experiment.Value}} </a>
+  <div class="row">
+  	<div class="col-md-8 col-md-offset-1">
+  		<ul class="list-group">
+  			<li class="list-group-item">
+					<h2>Demo Experiments</h2>
+				</li>
+				<li class="list-group-item">	
+					<div ng-repeat="experiment in demoExperiments" >
+					  <a href="#/demo/{{experiment._id}}" >{{experiment.title}} </a>
+					</div>
+				</li>	
+			</ul>
+			<ul class="list-group">	
+				<li class="list-group-item">
+					<h2  ng-show="experiments.length" >Experiments Shared with your Workspace</h2>
+				</li>
+				<li class="list-group-item">	
+					<div ng-show="experiments.length" ng-repeat="experiment in experiments" >
+					  <a href="#/experiment/{{experiment._id}}" >{{experiment.Value}} </a>
+					</div>
+				</li>	
+			</ul>	
+		</div>	
+	</div>	
 </div>
 
