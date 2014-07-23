@@ -115,6 +115,16 @@
     </div>  
     </form>
     <div class="col-md-3 col-md-offset-1 sub-nav"  ng-controller="ListExperimentsCtrl">
+      <ul class="list-group"> 
+        <li class="list-group-item">
+          <h2  ng-show="experiments.length" >New Experiment</h2>
+        </li>
+        <li class="list-group-item">  
+          <div ng-show="experiments.length" ng-repeat="experiment in experiments" >
+            <a href="#/experiment/{{experiment._id}}" >Create a New Experiment</a>
+          </div>
+        </li> 
+      </ul> 
       <ul class="list-group">
         <li class="list-group-item">
           <h2>Demo Experiments</h2>
@@ -137,4 +147,7 @@
       </ul> 
     </div>
   </div>
+  <div class="row">
+    <a class="col-md-2 col-md-offset-10" href="#">delete this experiment</a>
+  </div>  
 </div> <!-- /.container-fluid -->       
