@@ -4,64 +4,73 @@
     <p class="text-left">This is where we say nice things about our users and value the work they do.</p> 
     <p class="text-left">Then we talk about how this tool will help them communicate their goals and work consistantly across a company.</p>
   </div> <!-- /.jumbotron -->
-</div> <!-- /.container-fluid -->   
-<div class="cotainer-fluid">
   <div class="row">
-    <form class="col-md-7 col-md-offset-1">
+    <form class="col-md-8 col-md-offset-1">
+
+      <div class="page-header">
+        <h1 class="text-left">Part One <br /><small>Fill out this form and socialize the idea of the experiment for the changes that you are trying to create in your organization.</small></h1>
+      </div>  
+
       <div class="form-group">
-        <label for="title">Experiment Title </label>
+        <label for="title"><h3>Experiment Title</h3></label>
+        <p>Give your experiment a name that you will recognize into the future.</p>
         <input ng-readonly="readonly" type="text" id="title" ng-blur="blur('title')" ng-model="title">
       </div>
 
       <div class="form-group">
-        <label for="outcome">Desired Outcome</label>
-        <span ng-click="showOutcome=!showOutcome" ng-hide="showOutcome" class="toggle-info">learn more </span>
-        <span ng-click="showOutcome=!showOutcome" ng-show="showOutcome" class="toggle-info">learn less </span>
+        <label for="outcome"><h3>Desired Outcome</h3></label>
+        <span ng-click="showOutcome=!showOutcome" ng-hide="showOutcome" class="toggle-info label label-danger">learn more </span>
+        <span ng-click="showOutcome=!showOutcome" ng-show="showOutcome" class="toggle-info label label-danger">learn less </span>
         <p>What you are trying to accomplish, change or learn?</p>
         <div class="additional-info" ng-show="showOutcome">
-          What is the desired business outcome from your experiment. Make sure to explain this in economic terms that the business understands.
-          <div class="example"> 
-            Example: We will increase feature throughput. At out current run rate a feature takes 2 weeks to complete. It costs our development organization approximatly $30,000 for each of these features. A 10% increase will add up to $100,000 a year worth of additional velocity from this team alone. 
-          </div>
+          <blockquote>
+            <h5>What is the desired business outcome from your experiment?</h5>
+            <h5>Make sure to explain this in economic terms that the business understands.</h5>
+            <div class="example"> 
+              <h5><b>Example:</b><br /><i> We will increase feature throughput. At out current run rate a feature takes 2 weeks to complete. It costs our development organization approximatly $30,000 for each of these features. A 10% increase will add up to $100,000 a year worth of additional velocity from this team alone.</i></h5>
+            </div>
+          </blockquote>  
         </div>
 
         <textarea id="outcome" ng-blur="blur('outcome')" ng-model="outcome" ng-readonly="readonly" ></textarea>
       </div>
           
       <div class="form-group">
-        <label for="hypothesis">Hypothesis</label>
-        <span ng-click="showHypothesis=!showHypothesis" ng-hide="showHypothesis" class="additional-information">learn more </span>
-        <span ng-click="showHypothesis=!showHypothesis" ng-show="showHypothesis" class="additional-information">learn less </span>
+        <label for="hypothesis"><h3>Hypothesis</h3></label>
+        <span ng-click="showHypothesis=!showHypothesis" ng-hide="showHypothesis" class="additional-information label label-danger">learn more </span>
+        <span ng-click="showHypothesis=!showHypothesis" ng-show="showHypothesis" class="additional-information label label-danger">learn less </span>
         <p>What do you want to try?</p>  
         <div class="additional-info" ng-show="showHypothesis">
-            Your hypothesis is a combination of the change you want to make and the desired results from that change. If you hypothesis is successful you will be able to show data that you have made an improvement in the direction of your desired outcome. 
-          <div class="example">
-            I think the simplifaction of our build system will improve the througput of our team. A brief interview of my fellow engineers showed that waiting for the resolution of broken builds slowed them down multiple times a day. We think that spending one week improving our build process will increase our team's throughput by over 10%. 
-          </div>
+          <blockquote>
+              <h5>Your hypothesis is a combination of the change you want to make and the desired results from that change. If you hypothesis is successful you will be able to show data that you have made an improvement in the direction of your desired outcome.</h5> 
+            <div class="example">
+              <h5>I think the simplifaction of our build system will improve the througput of our team. A brief interview of my fellow engineers showed that waiting for the resolution of broken builds slowed them down multiple times a day. We think that spending one week improving our build process will increase our team's throughput by over 10%. </h5>
+            </div>
+          </blockquote>
         </div>
         <textarea id="hypothesis" ng-blur="blur('hypothesis')" ng-model="hypothesis" ng-readonly="readonly"></textarea>
       </div>
 
       <div class="form-group">
-        <label for="resources">Resources Needed</label>
+        <label for="resources"><h3>Resources Needed</h3></label>
         <p>What type of support, equipment, people and buy in is needed to properly learn from the experiment?</p>
         <textarea id="resources" ng-blur="blur('resources')" ng-model="resources" ng-readonly="readonly"></textarea>
       </div>
 
       <div class="form-group">
-        <label for="procedure">Procedure</label>
+        <label for="procedure"><h3>Procedure</h3></label>
         <p>What process are you going to adopt, change or alter?</p>
         <textarea id="procedure" ng-blur="blur('procedure')" ng-model="procedure" ng-readonly="readonly"></textarea>
       </div>
 
       <div class="form-group">
-        <label for="data">Data to be Collected</label>
+        <label for="data"><h3>Data to be Collected</h3></label>
         <p>How will you know the effects that your change created? Can you adopt a control group to help you be sure?</p>
         <textarea id="data"  ng-blur="blur('data')" ng-model="data" ng-readonly="readonly"></textarea>
       </div>
 
       <div class="form-group">
-        <label for="current_state">Current State</label>
+        <label for="current_state"><h3>Current State</h3></label>
         <p>What is the current state of the data you are collecting?</p>
         <textarea id="current_state" ng-blur="blur('currentState')" ng-model="currentState" ng-readonly="readonly"></textarea>
         <input type="file" id="current_state_file">
@@ -70,15 +79,13 @@
       <div ng-repeat="image in beforeImages" >
         <img class="status-image" ng-src="{{image}}"></img>
       </div>
-            
-      <p class="bg-info"><span class="picto icon-test"></span> After socializing the idea of the experiment and 
-      the changes that you are trying to create in your organization, you are ready to see how it goes...</p>
 
-      <p class="bg-info"><span class="picto icon-test"></span> After you complete your experiment, fill out the second part of the report.</p>
+      <div class="page-header">
+        <h1 class="text-left">Part Two <br /><small>After you complete your experiment, fill out the second part of the report.</small></h1>
+      </div>  
 
-      <hr>
       <div class="form-group">
-      <label for="post_state">Post Experiment State</label>
+      <label for="post_state"><h3>Post Experiment State</h3></label>
       <p>What is the new state of the data you are collected?</p>
       <textarea id="post_state" ng-blur="blur('postState')" ng-model="postState" ng-readonly="readonly">></textarea>
       <input type="file" id="post_state_file">
@@ -87,22 +94,25 @@
         <img class="status-image" ng-src="{{image}}"></img>
       </div>
       <div class="form-group">
-      <label for="effectiveness">Evaluate Effectiveness of Change</label>
+      <label for="effectiveness"><h3>Evaluate Effectiveness of Change</h3></label>
       <p>Did your experiment create the desired effect?</p>
       <textarea id="effectiveness" ng-blur="blur('effectiveness')" ng-model="effectiveness" ng-readonly="readonly">></textarea>
       </div>
 
       <div class="form-group">
-      <label for="outliers">Outliers</label>
+      <label for="outliers"><h3>Outliers</h3></label>
       <p>Did any unexpected forces change the outcome of your experiment?</p>
       <textarea id="outliers" ng-blur="blur('outliers')" ng-model="outliers" ng-readonly="readonly"></textarea>
       </div>
 
       <div class="form-group">
-      <label for="analysis">Analysis and Recommended Next Experiment</label>
+      <label for="analysis"><h3>Analysis and Recommended Next Experiment</h3></label>
       <p>What’s next to continue your progress?</p>
       <textarea id="analysis" ng-blur="blur('analysis')" ng-model="analysis" ng-readonly="readonly">></textarea>
       </div>
+      <div class="page-header">
+      <h1 class="text-left">...And That's It <br /><small>Thank you for improving your organization.</small></h1>
+    </div>  
     </form>
-  </div>  
-</div> <!-- /.container-fluid -->  
+  </div>
+</div> <!-- /.container-fluid -->       

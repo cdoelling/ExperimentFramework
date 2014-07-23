@@ -33,6 +33,9 @@ textarea, input {
 textarea {
 	min-height: 100px;
 }
+input, textarea {
+	margin-top: 15px;
+}
 input.button {
 	color: #fff;
 	background: #00A9E0;    /* $cyan */
@@ -52,11 +55,14 @@ input.button:hover {
 .jumbotron {
 	padding-left: 60px;
 	padding-right: 60px;
-}
-.jumbotron h1 {
+	background: #991219; 
 
 }
+.jumbotron h1 {
+	color: white;
+}
 .jumbotron p {
+	color: white;
 	font-family: 'proxima_nova_ltlight';
 	margin-bottom: 0;
 }
@@ -71,6 +77,11 @@ h2 {
 }
 h3 {
 	font-size: 1.5em;
+	margin-bottom: 0;
+}
+h5 {
+	font-size: .9em;
+	line-height: 26px;
 }
 #logo {
 	float: left;
@@ -101,6 +112,13 @@ p {
 	margin: 30px 0;
 	color: #fff;
 	font-family: 'proxima_nova_ltsemibold';
+}
+.form-group span {
+	display: inline-block;
+	margin-left: 15px;
+	font-variant: small-caps;
+	vertical-align: text-top;
+	cursor: pointer;
 }
 hr {
 	border: 1px solid #d6d6d6;
