@@ -15,8 +15,6 @@
       <h1 class="pull-left">Rally Experiment Framework</h1>
       <h1  ng-controller="InfoCtrl" ng-hide="!info"  class="pull-left info {{error?'error-text':''}}" >{{info}}</h1>
       <div>
-        <img class="pull-right" ng-show="user.id" id="profile" 
-          ng-src="https://rally1.rallydev.com/slm/profile/image/{{user.id}}/200.sp" height="40px" width="40px" />
           <h1 ng-show="user.id" class="pull-right" id="logout"><a href="#/logout">Logout</a></h1>
           <h1 ng-show="!user.id" class="pull-right" id="logout"><a href="#/login">Login</a></h1>
       </div>
