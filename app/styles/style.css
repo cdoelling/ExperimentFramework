@@ -158,4 +158,10 @@ hr {
 .sub-nav {
 	margin-top: 45px;
 }
+.warning-text {
+width: 80%;
+}
 
+input.centered{ 
+  float:none;
+}
