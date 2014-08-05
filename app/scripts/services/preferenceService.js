@@ -45,6 +45,19 @@
         });
         return deferred.promise;
       },
+      deleteExperimentParts:function(refs){
+        var requests = [];
+        refs.forEach(function(ref){
+          requests.push($http({
+            method:'DELETE',
+            url:ref,
+            headers:headers,
+            withCredentials:true,
+            responseType:'json'
+          }));
+        });
+        return $q.all(requests);
+      },
       saveExperimentPart:function(experimentId,name,data,objectId){
         var key = 'experiment-' + name + ' '+experimentId;
         var endpoint = objectId ? objectId : 'create';
@@ -71,7 +84,6 @@
           }
         })
         .error(function(){
-          console.log('dead');
         });
       
       }

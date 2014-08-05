@@ -117,7 +117,7 @@
     <div class="col-md-3 col-md-offset-1 sub-nav"  ng-controller="ListExperimentsCtrl">
       <ul class="list-group"> 
         <li class="list-group-item">
-          <h2  ng-show="experiments.length" >New Experiment</h2>
+          <h2>New Experiment</h2>
         </li>
         <li class="list-group-item">  
           <div>
@@ -148,6 +148,6 @@
     </div>
   </div>
   <div class="row">
-    <a class="col-md-2 col-md-offset-10" href="#">delete this experiment</a>
+    <a class="col-md-2 col-md-offset-10" ng-hide="!experimentId" href="#/experiment/{{experimentId}}" ng-click="deleteExperiment()" >delete this experiment</a>
   </div>  
 </div> <!-- /.container-fluid -->       
