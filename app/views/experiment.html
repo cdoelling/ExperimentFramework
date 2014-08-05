@@ -137,10 +137,10 @@
       </ul>
       <ul class="list-group"> 
         <li class="list-group-item">
-          <h2  ng-show="experiments.length" >Experiments Shared with your Workspace</h2>
+          <h2>Experiments Shared with your Workspace</h2>
         </li>
         <li class="list-group-item">  
-          <div ng-show="experiments.length" ng-repeat="experiment in experiments" >
+          <div ng-repeat="experiment in experiments" >
             <a href="#/experiment/{{experiment._id}}" >{{experiment.Value}} </a>
           </div>
         </li> 

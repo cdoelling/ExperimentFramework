@@ -1,6 +1,6 @@
 'use strict';
 angular.module('experimentFrameworkApp')
-.controller('ExperimentCtrl', function ($scope,$routeParams,preferenceService,$rootScope,$location) {
+.controller('ExperimentCtrl', function ($scope,$routeParams,preferenceService,$rootScope,$location,$route) {
   var refs = [];
   $scope.experimentId = $routeParams.id;
   $scope.blur = function(field){
@@ -8,6 +8,7 @@ angular.module('experimentFrameworkApp')
     $rootScope.$broadcast('update-info', {info:'Saving'});
     preferenceService.saveExperimentPart($routeParams.id,field,$scope[field],objectId)
     .then(function(){
+      $route.reload();
       $rootScope.$broadcast('update-info', {
         info:'Saved Successfully',
         duration:2000
